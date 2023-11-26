@@ -28,26 +28,26 @@ def merge(left, right, arr):
         k+=1
 
 
-def mergeSort(arr):
+def recMergeSort(arr):
     if len(arr) < 2:
         return
     else:
         middle = len(arr)//2
         left = arr[:middle]
         right = arr[middle:]
-        mergeSort(left)
-        mergeSort(right)
+        recMergeSort(left)
+        recMergeSort(right)
         merge(left, right, arr)
     return arr
 
 startBest = t.time()
-print(mergeSort(best))
+print(recMergeSort(best))
 endBest = t.time()
 startAvg = t.time()
-print(mergeSort(avg))
+print(recMergeSort(avg))
 endAvg = t.time()
 startWorst = t.time()
-print(mergeSort(worst))
+print(recMergeSort(worst))
 endWorst = t.time()
 
 print(f'worst case: {round(endWorst-startWorst, 3)}s')
